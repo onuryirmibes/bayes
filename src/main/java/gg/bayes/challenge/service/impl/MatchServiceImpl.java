@@ -115,7 +115,7 @@ public class MatchServiceImpl implements MatchService {
         killEventRepository.save(heroKillEvent);
     }
 
-    private Match getMatch(Long matchId) {
+    private Match getMatch(final Long matchId) {
         final Optional<Match> optionalMatch = matchRepository.findById(matchId);
         if (!optionalMatch.isPresent()) {
             throw new DotaChallangeBadRequestException("Requested id is not found. Id : " + matchId);
